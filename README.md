@@ -45,7 +45,7 @@ Soal nomor 1b ditandai dengan `echo "1 B - 2 Negara bagian dengan profit paling 
 
 Soal nomor 1c ditandai dengan `echo "1 C - 10 Produk dengan profit paling kecil"`. Sama seperti persoalan sebelumnya, `awk -F \\t` digunakan untuk blablabla. Kemudian, `FNR>1{if($11=="Texas" || $11=="Illinois")array[$17]+=$21}END{for(region in array)print array[region], region}` artinya untuk untuk baris yang lebih dari baris pertama, jika field 11 ***(Region)*** merupakan ***Texas*** atau ***Illinois***, field 17 ***(product name)*** dari State yang dimaksud dimasukkan ke dalam array dan field 21 ***(profit)*** dijumlahkan. Output yang dihasilkan adalah data di field 17 ***(product name)*** beserta profitnya masing-masing. `sort -g` untuk mengurutkan data dari yang terkecil. Dan `head -n 10` untuk menampilkan 10 data teratas.
 
-
+![Screenshot Soal 1] (
 
 # Soal 2
 
