@@ -30,3 +30,4 @@ awk -F \\t 'FNR>1{if($11=="Texas" || $11=="Illinois")array[$17]+=$21}END{for(reg
 
 ```
 pada baris pertama bagian `echo "1 A - Region dengan profit paling kecil"` maksudnya adalah bla bla
+ 
