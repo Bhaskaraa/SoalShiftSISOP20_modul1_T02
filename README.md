@@ -38,7 +38,7 @@ Untuk soal nomor 1a, ditandai dengan `echo "1 A - Region dengan profit paling ke
 ## 1B
 ```
 echo "1 B - 2 Negara bagian dengan profit paling kecil" 
-`awk -F \\t 'FNR>1{if($13=="Central")array[$11]+=$21}END{for(region in array)print array[region], region}' Sample-Superstore.tsv | sort -g | awk -F " " '{print $2}' | head -n 2
+awk -F \\t 'FNR>1{if($13=="Central")array[$11]+=$21}END{for(region in array)print array[region], region}' Sample-Superstore.tsv | sort -g | awk -F " " '{print $2}' | head -n 2
 ```
 
 Soal nomor 1b ditandai dengan `echo "1 B - 2 Negara bagian dengan profit paling kecil"`. Sama seperti soal ***1a***, `awk -F \\t` digunakan untuk blablabla. Kemudian, `FNR>1{if($13=="Central")array[$11]+=$21}END{for(region in array)print array[region], region}` artinya untuk untuk baris yang lebih dari baris pertama, jika field 13 ***(Region)*** merupakan ***Central***, field 11 dari Region Central dimasukkan ke dalam array dan field 21 ***(profit)*** dijumlahkan. Output yang dihasilkan adalah data di field 11 ***(State)*** beserta profitnya masing-masing. `sort -g` untuk mengurutkan data dari yang terkecil. `awk -F " " '{print $2}'` berfungsi untuk memberi pemisah spasi diantara field output dan yang di-***print*** field ke 2 saja. `head -n 2` berfungsi untuk menampilkan 2 output teratas. sesuai dengan permintaan soal.
@@ -46,7 +46,7 @@ Soal nomor 1b ditandai dengan `echo "1 B - 2 Negara bagian dengan profit paling 
 ## 1C
 ```
 echo "1 C - 10 Produk dengan profit paling kecil"
-`awk -F \\t 'FNR>1{if($11=="Texas" || $11=="Illinois")array[$17]+=$21}END{for(region in array)print array[region], region}' Sample-Superstore.tsv | sort -g | head -n 10
+awk -F \\t 'FNR>1{if($11=="Texas" || $11=="Illinois")array[$17]+=$21}END{for(region in array)print array[region], region}' Sample-Superstore.tsv | sort -g | head -n 10
 ```
 
 Soal nomor 1c ditandai dengan `echo "1 C - 10 Produk dengan profit paling kecil"`. Sama seperti persoalan sebelumnya, `awk -F \\t` digunakan untuk blablabla. Kemudian, `FNR>1{if($11=="Texas" || $11=="Illinois")array[$17]+=$21}END{for(region in array)print array[region], region}` artinya untuk untuk baris yang lebih dari baris pertama, jika field 11 ***(Region)*** merupakan ***Texas*** atau ***Illinois***, field 17 ***(product name)*** dari State yang dimaksud dimasukkan ke dalam array dan field 21 ***(profit)*** dijumlahkan. Output yang dihasilkan adalah data di field 17 ***(product name)*** beserta profitnya masing-masing. `sort -g` untuk mengurutkan data dari yang terkecil. Dan `head -n 10` untuk menampilkan 10 data teratas.
@@ -112,6 +112,10 @@ Kusuma telah sering dicampakkan oleh pujaan hatinya sehingga kalian berniat untu
 ***b.*** Menggunakan crontab untuk melakukan menjalankan script setiap 8 jam sekali dimulai pukul 06.00 setiap hari kecuali Hari Sabtu \
 ***c.*** Karena gambar yang diunduh bersifat random, jika ada gambar yang sama/identik, sisakan 1 gambar untuk Kusuma dan masukan gambar tersebut folder "kenangan" dengan format penamaan "kenangan_NO", sedangkan gambar identik lainnya dimasukan ke folder "duplikasi" dengan format penamaan file "duplikasi_NO" \
 Hint : gunakan ***wget.log*** untuk membuat ***location.log*** yang isinya adalah hasil dari grep "Location:". 
+
+Untuk itu kalian diminta untuk membantu menenangkan hati Kusuma :)
+
+File untuk penyelesaian soal ini ada disini : [Source Code Soal 3](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02/tree/master/Soal3)
 
 ## 3A
 Untuk menyelesaikan persoalan nomor 3a, syntax yang digunakan adalah sebagai berikut.
