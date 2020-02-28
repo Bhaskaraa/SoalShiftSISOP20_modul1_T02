@@ -210,14 +210,14 @@ done
 grep "Location" wget.log >> location.log
 
 ```
-- ***banyakfile***=`ls | grep "pdkt_kusuma" | cut -d '_' -f 3 | sort -n | tail -1`
-- `[[ $banyakfile =~ [^0-9] ]]`
-- `banyakfile=0`
-- ***awal***=`expr $banyakfile + 1`
-- ***akhir=***`expr $banyakfile + 28`
-- `for ((i=awal;i<=akhir;i++))`
+- ***banyakfile***=`ls | grep "pdkt_kusuma" | cut -d '_' -f 3 | sort -n | tail -1` Kita buat variabel bernama ***banyakfile*** kemudian `grep "pdkt_kusuma` untuk membuat pattern dengan pattern yang sudah kita tentukan. `cut -d '_' -f 3`. `sort -n` untuk mengurutkan dari yang paling atas terkecil ke yang paling bawah terbesar. `tail -1` mengambil 1 output terakhir.
+- `[[ $banyakfile =~ [^0-9] ]]` Mengecek apakah ***$banyakfile*** terdiri dari angka 0-9.
+- `banyakfile=0` Jika tidak ada angka 0-9 maka ***banyakfile*** dimulai dari 0
+- ***awal***=`expr $banyakfile + 1` Buat variabel baru bernama ***awal***. `expr $banyakfile + 1` expr untuk syntax aritmatika dan ***&banyakvariabel*** ditambah dengan 1.
+- ***akhir=***`expr $banyakfile + 28` Buat variabel baru bernama ***akhir***. `expr $banyakfile + 28` expr untuk syntax aritmatika dan ***&banyakvariabel*** ditambah dengan 28.
+- `for ((i=awal;i<=akhir;i++))` Untuk looping  ketika i-awal kemudian i kurang dari sama dengan akhir maka i di increment.
 - `wget -O "pdkt_kusuma_$i" -a wget.log "https://loremflickr.com/320/240/cat"`
-- `grep "Location" wget.log >> location.log`
+- `grep "Location" wget.log >> location.log` mengambil "Location" dari wget.log kemudian dipindahkan ke location.log
 
 ## Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 3A.
 
