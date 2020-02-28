@@ -109,6 +109,10 @@ for judul in $@
 done
 ```
 
+## Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 2.
+
+![](Screenshot/Soal2/1.png)
+
 # Soal 3
 Kusuma telah sering dicampakkan oleh pujaan hatinya sehingga kalian berniat untuk menghiburnya dengan mengirimkan foto kucing kepadanya. Kemudian kalian memiliki ide sebagai berikut :
 
