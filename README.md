@@ -63,6 +63,9 @@ Untuk itu, Whits meminta bantuan kalian untuk menyelesaikan persoalan-persoalan 
 
 File untuk penyelesaian soal ini ada disini : [Source Code Soal 2](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02/tree/master/Soal2)
 
+Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 1.
+![](Screenshot/Soal1/Screenshot from 2020-02-21 15-48-33.png)
+
 ## 2A dan 2B
 Untuk menyelesaikan persoalan nomor 2A, syntax yang digunakan adalah sebagai berikut. 
 ```
@@ -138,7 +141,6 @@ done
 
 grep "Location" wget.log >> location.log
 ```
-
 ## 3B
 Untuk menyelesaikan persoalan nomor 3b, syntax yang digunakan adalah sebagai berikut.
 ```
