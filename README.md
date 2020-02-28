@@ -6,10 +6,24 @@ Disusun oleh :
 
 # Daftar Isi
 ## [Soal 1](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#soal-1---awk-untuk-menyaring-data)
-- [Penyelesaian Soal 1A] (https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#1a)
-- [Penyelesaian Soal 1B] ()
-- [Penyelesaian Soal 1C] ()
-- [Dokumentasi Output yang Dihasilkan] ()
+- [Penyelesaian Soal 1A](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#1a---menampilkan-region-dengan-profit-paling-sedikit)
+- [Penyelesaian Soal 1B](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#1b---menampilkan-2-state-dengan-profit-paling-sedikit)
+- [Penyelesaian Soal 1C](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#1c---menampilkan-10-product-name-dengan-profit-paling-sedikit)
+- [Dokumentasi Output yang Dihasilkan](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#gambar-dibawah-ini-adalah-hasil-dari-script-penyelesaian-soal-nomor-1)
+
+## [Soal 2](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#soal-2---membuat-password-random-dan-mengenkripsi-file-dengan-ceaser)
+- [Penyelesaian Soal 2A dan 2B](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#2a-dan-2b---membuat-password-random-dan-memberi-namajudul-pada-file)
+- [Penyelesaian Soal 2C](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#2c---mengenkripsi-judul-file)
+- [Penyelesaian Soal 2D](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#2d---mendekripsi-judul-file-yang-dienkripsi)
+- [Dokumentasi Output yang Dihasilkan](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#gambar-dibawah-ini-adalah-hasil-dari-script-penyelesaian-soal-nomor-2)
+
+## [Soal 3](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#soal-3---mengunduh-gambar-dan-melakukan-pemisahan-gambar-yang-identik)
+- [Penyelesaian Soal 3A](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#3a---mengunduh-28-gambar-dari-link-yang-diberikan)
+- [Penyelesaian Soal 3B](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#3b---menjalankan-crontab-untuk-menjalankan-program-secara-otomatis)
+- [Penyelesaian Soal 3C](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#3c---mengidentifikasi-gambar-yang-identik-dan-memisahkannya)
+- [Dokumentasi Output yang Dihasilkan](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#gambar-dibawah-ini-adalah-hasil-dari-script-penyelesaian-soal-nomor-3c)
+
+
 
 # Soal 1 - AWK untuk Menyaring Data
 Whits adalah seorang mahasiswa teknik informatika. Dia mendapatkan tugas praktikum untuk membuat laporan berdasarkan data yang ada pada file “Sample-Superstore.tsv”. Namun dia tidak dapat menyelesaikan tugas tersebut. Laporan yang diminta berupa : 
