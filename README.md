@@ -172,15 +172,60 @@ do
 done
 
 grep "Location" wget.log >> location.log
+
 ```
+## Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 3A.
+
+![](Screenshot/Soal3/1.png)
+
 ## 3B
 Untuk menyelesaikan persoalan nomor 3b, syntax yang digunakan adalah sebagai berikut.
 ```
 5 6,14,22 * * 0-5 /bin/bash /home/bhaskarajd/Soal3/Soal3.sh
+
 ```
 
 ## 3C
 Untuk menyelesaikan persoalan nomer 3c, syntax yang digunakan adalah sebagai berikut.
+```
+#!/bin/bash
+
+akhir=`ls | grep "pdkt_kusuma" | cut -d "_" -f 3 | sort -n | tail -1`
+
+if [[ `ls | grep "kenangan"` != "kenangan" ]]
+then
+  mkdir ./kenangan
+fi
+
+if [[ `ls | grep "duplikasi"` != "duplikasi" ]]
+then
+  mkdir ./duplikasi
+fi
+
+arr=""
+
+for ((i=1;i<=akhir;i++))
+do
+  loc="`cat wget.log | grep "Location:" | head -$i | tail -1 | cut -d " " -f 2`"
+  Duplikasi=`echo -e $arr | awk -v loc=$loc 'BEGIN {Duplikasi=0} {if (loc==$0) Duplikasi=1} END {printf "%d", Duplikasi}'`
+  
+if [[ $Duplikasi == 1 ]]
+  then
+    mv pdkt_kusuma_$i ./duplikasi/duplikasi_$i
+  else
+    arr="$arr$loc\n"
+    mv pdkt_kusuma_$i ./kenangan/kenangan_$i
+  fi
+done
+
+```
+## Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 3C.
+
+![](Screenshot/Soal3/2.png)
+![](Screenshot/Soal3/3.png)
+![](Screenshot/Soal3/4.png)
+
+
 
 
 
