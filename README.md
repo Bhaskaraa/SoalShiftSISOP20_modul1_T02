@@ -180,7 +180,8 @@ Kusuma telah sering dicampakkan oleh pujaan hatinya sehingga kalian berniat untu
 
 ***a.*** Mengunduh 28 gambar dari "https://loremflickr.com/320/240/cat" dengan command ***wget*** dengan format nama file "pdkt_kusuma_NO" dan menyimpan ***log messages wget*** kedalam file ***wget.log***. \
 ***b.*** Menggunakan crontab untuk melakukan menjalankan script setiap 8 jam sekali dimulai pukul 06.00 setiap hari kecuali Hari Sabtu \
-***c.*** Karena gambar yang diunduh bersifat random, jika ada gambar yang sama/identik, sisakan 1 gambar untuk Kusuma dan masukan gambar tersebut folder "kenangan" dengan format penamaan "kenangan_NO", sedangkan gambar identik lainnya dimasukan ke folder "duplikasi" dengan format penamaan file "duplikasi_NO" \
+***c.*** Karena gambar yang diunduh bersifat random, jika ada gambar yang sama/identik, sisakan 1 gambar untuk Kusuma dan masukan gambar tersebut folder "kenangan" dengan format penamaan "kenangan_NO", sedangkan gambar identik lainnya dimasukan ke folder "duplikasi" dengan format penamaan file "duplikasi_NO" 
+
 Hint : gunakan ***wget.log*** untuk membuat ***location.log*** yang isinya adalah hasil dari grep "Location:". 
 
 Untuk itu kalian diminta untuk membantu menenangkan hati Kusuma :)
@@ -209,6 +210,15 @@ done
 grep "Location" wget.log >> location.log
 
 ```
+- ***banyakfile***=`ls | grep "pdkt_kusuma" | cut -d '_' -f 3 | sort -n | tail -1`
+- `[[ $banyakfile =~ [^0-9] ]]`
+- `banyakfile=0`
+- ***awal***=`expr $banyakfile + 1`
+- ***akhir=***`expr $banyakfile + 28`
+- `for ((i=awal;i<=akhir;i++))`
+- `wget -O "pdkt_kusuma_$i" -a wget.log "https://loremflickr.com/320/240/cat"`
+- `grep "Location" wget.log >> location.log`
+
 ## Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 3A.
 
 ![](Screenshot/Soal3/1.png)
@@ -219,6 +229,10 @@ Untuk menyelesaikan persoalan nomor 3b, syntax yang digunakan adalah sebagai ber
 5 6,14,22 * * 0-5 /bin/bash /home/bhaskarajd/Soal3/Soal3.sh
 
 ```
+- ***5***
+- ***6,14,22***
+- ***0-5***
+- `/bin/bash /home/bhaskarajd/Soal3/Soal3.sh`
 
 ## 3C - Mengidentifikasi Gambar yang Identik dan Memisahkannya
 Untuk menyelesaikan persoalan nomer 3c, syntax yang digunakan adalah sebagai berikut.
@@ -254,16 +268,18 @@ if [[ $Duplikasi == 1 ]]
 done
 
 ```
+- ***akhir***=`ls | grep "pdkt_kusuma" | cut -d "_" -f 3 | sort -n | tail -1`
+- `[[ `ls | grep "kenangan"` != "kenangan" ]]` sad `mkdir ./kenangan`
+- `[[ `ls | grep "duplikasi"` != "duplikasi" ]]` sss `mkdir ./duplikasi`
+- `arr=""`
+- `for ((i=1;i<=akhir;i++))`
+- ***loc***="`cat wget.log | grep "Location:" | head -$i | tail -1 | cut -d " " -f 2`"
+- ***Duplikasi***=`echo -e $arr | awk -v loc=$loc 'BEGIN {Duplikasi=0} {if (loc==$0) Duplikasi=1} END {printf "%d", Duplikasi}'`
+- `[[ $Duplikasi == 1 ]]` dqwqw `mv pdkt_kusuma_$i ./duplikasi/duplikasi_$i`
+- `arr="$arr$loc\n"` jbbguk `mv pdkt_kusuma_$i ./kenangan/kenangan_$i`
+
 ## Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 3C.
 
 ![](Screenshot/Soal3/2.png)
 ![](Screenshot/Soal3/3.png)
 ![](Screenshot/Soal3/4.png)
-
-
-
-
-
-
-
- 
