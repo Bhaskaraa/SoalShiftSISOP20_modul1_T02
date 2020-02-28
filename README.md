@@ -210,14 +210,14 @@ done
 grep "Location" wget.log >> location.log
 
 ```
-- ***banyakfile***=`ls | grep "pdkt_kusuma" | cut -d '_' -f 3 | sort -n | tail -1` Kita buat variabel bernama ***banyakfile*** kemudian `grep "pdkt_kusuma` untuk membuat pattern dengan pattern yang sudah kita tentukan. `cut -d '_' -f 3`. `sort -n` untuk mengurutkan dari yang paling atas terkecil ke yang paling bawah terbesar. `tail -1` mengambil 1 output terakhir.
-- `[[ $banyakfile =~ [^0-9] ]]` Mengecek apakah ***$banyakfile*** terdiri dari angka 0-9.
-- `banyakfile=0` Jika tidak ada angka 0-9 maka ***banyakfile*** dimulai dari 0
-- ***awal***=`expr $banyakfile + 1` Buat variabel baru bernama ***awal***. `expr $banyakfile + 1` expr untuk syntax aritmatika dan ***&banyakvariabel*** ditambah dengan 1.
-- ***akhir=***`expr $banyakfile + 28` Buat variabel baru bernama ***akhir***. `expr $banyakfile + 28` expr untuk syntax aritmatika dan ***&banyakvariabel*** ditambah dengan 28.
+- ***banyakfile***=`ls | grep "pdkt_kusuma" | cut -d '_' -f 3 | sort -n | tail -1` Kita buat variabel bernama ***banyakfile*** kemudian `grep "pdkt_kusuma`berfungsi untuk mengambil file dengan pattern yang telah ditentukan. `cut -d '_' -f 3` berfungsi untuk menghapus karakter garis bawah sehingga variabel tersebut hanya dipisahkan dengan spasi dan terbagi menjadi tiga field, dan akhirnya yang dimasukan ke field ketiga adalah field ke 3. `sort -n` untuk mengurutkan berdasarkan urutan numerik. `tail -1` mengambil 1 output yang paling bawah.
+- `[[ $banyakfile =~ [^0-9] ]]` berfungsi untuk mengecek apakah ***$banyakfile*** terdiri dari angka 0-9.
+- `banyakfile=0` Jika tidak ada angka 0-9 maka ***banyakfile*** dimulai dari 0.
+- ***awal***=`expr $banyakfile + 1` Buat variabel baru bernama ***awal***. `expr $banyakfile + 1` ***expr*** adalah syntax agar dapat melakukan operasi aritmatika dimana variabel awal merupakan ***banyakvariabel*** ditambah dengan 1.
+- ***akhir=***`expr $banyakfile + 28` Buat variabel baru bernama ***akhir***. `expr $banyakfile + 28` ***expr*** adalah syntax agar dapat melakukan operasi aritmatika dimana variabel akhhir merupakan ***&banyakvariabel*** ditambah dengan 28.
 - `for ((i=awal;i<=akhir;i++))` Untuk looping  ketika i=awal kemudian i kurang dari sama dengan akhir maka i di increment.
-- `wget -O "pdkt_kusuma_$i" -a wget.log "https://loremflickr.com/320/240/cat"`
-- `grep "Location" wget.log >> location.log` mengambil "Location" dari wget.log kemudian dipindahkan ke location.log
+- `wget -O "pdkt_kusuma_$i" -a wget.log "https://loremflickr.com/320/240/cat"` berfungsi untuk mengunduh gambar dari tautan yang diberikan. `wget -O "pdkt_kusuma_$i"` berfungsi untuk memberi pola nama pada file yang diunduh.
+- `grep "Location" wget.log >> location.log` mengambil data "Location" yang ada dalam wget.log kemudian dipindahkan ke location.log.
 
 ## Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 3A.
 
@@ -229,10 +229,10 @@ Untuk menyelesaikan persoalan nomor 3b, syntax yang digunakan adalah sebagai ber
 5 6,14,22 * * 0-5 /bin/bash /home/bhaskarajd/Soal3/Soal3.sh
 
 ```
-- ***5*** Karena yang diminta soal adalah jam 06.05 maka di bintang pertama adalah menit ke-5.
+- ***5*** Karena yang pada soal jam yang ditunjukkan di awal adalah jam 06.05 maka di bintang pertama adalah menit ke-5.
 - ***6,14,22*** Karena yang diminta soal adalah jam 6 dan setiap 8 jam, maka kelipatan 8 setelah jam 6 adalah jam 6,14,22.
-- ***0-5*** Karena yang diminta soal adalah setiap hari kecuali hari sabtu, maka 0-5 karena di crontab 0 adalah hari minggu.
-- `/bin/bash /home/bhaskarajd/Soal3/Soal3.sh` Lokasi file yang akan dieksekusi.
+- ***0-5*** Karena yang diminta soal adalah setiap hari kecuali hari sabtu, maka 0-5 karena di crontab 0 adalah hari Minggu dan Sabtu adalah 6.
+- `/bin/bash /home/bhaskarajd/Soal3/Soal3.sh` berfungsi sebagai perintah untuk menjalan script bash.
 
 ## 3C - Mengidentifikasi Gambar yang Identik dan Memisahkannya
 Untuk menyelesaikan persoalan nomer 3c, syntax yang digunakan adalah sebagai berikut.
@@ -268,15 +268,15 @@ if [[ $Duplikasi == 1 ]]
 done
 
 ```
-- ***akhir***=`ls | grep "pdkt_kusuma" | cut -d "_" -f 3 | sort -n | tail -1` Kita buat variabel bernama ***akhir*** kemudian `grep "pdkt_kusuma` untuk membuat pattern dengan pattern yang sudah kita tentukan. `cut -d '_' -f 3`. `sort -n` untuk mengurutkan dari yang paling atas terkecil ke yang paling bawah terbesar. `tail -1` mengambil 1 output terakhir.
-- `[[ `ls | grep "kenangan"` != "kenangan" ]]` sad `mkdir ./kenangan` List kemudian mengecek dengan mengambil "kenangan", `mkdir ./kenangan` jika tidak ada maka membuat folder kenangan.
-- `[[ `ls | grep "duplikasi"` != "duplikasi" ]]` sss `mkdir ./duplikasi` List kemudian mengecek dengan mengambil "duplikasi", `mkdir ./duplikasi` jika tidak ada maka membuat folder duplikasi.
-- `arr=""` Buat array yang isinya masih kosong.
-- `for ((i=1;i<=akhir;i++))` Untuk looping  ketika i=1 kemudian i kurang dari sama dengan akhir maka i di increment.
-- ***loc***="`cat wget.log | grep "Location:" | head -$i | tail -1 | cut -d " " -f 2`"
-- ***Duplikasi***=`echo -e $arr | awk -v loc=$loc 'BEGIN {Duplikasi=0} {if (loc==$0) Duplikasi=1} END {printf "%d", Duplikasi}'`
-- `[[ $Duplikasi == 1 ]]` dqwqw `mv pdkt_kusuma_$i ./duplikasi/duplikasi_$i`
-- `arr="$arr$loc\n"` jbbguk `mv pdkt_kusuma_$i ./kenangan/kenangan_$i`
+- ***akhir***=`ls | grep "pdkt_kusuma" | cut -d "_" -f 3 | sort -n | tail -1` Kita buat variabel bernama ***akhir*** kemudian `grep "pdkt_kusuma` berfungsi untuk mengambil file dengan pola yang ditentukan. `cut -d '_' -f 3` berfungsi untuk menghapus karakter garis bawah yang memisahkan pola dan mengambil field ke 3. `sort -n` untuk mengurutkan berdasarkan urutan numerik. `tail -1` mengambil 1 output terakhir dari bawah.
+- `[[ `ls | grep "kenangan"` != "kenangan" ]]` berfungsi untuk mengambil file dengan pola yang ditentukan dan jika tidak ada file/folder yang memiliki pola yang sama maka  `mkdir ./kenangan` berfungsi untuk membuat folder kenangan.
+- `[[ `ls | grep "duplikasi"` != "duplikasi" ]]` berfungsi untuk mengambil file dengan pola yang ditentukan dan jika tidak ada file/folder yang memiliki pola yang sama maka  `mkdir ./duplikasi` berfungsi untuk membuat folder duplikasi.
+- `arr=""` Buat variabel array yang isinya masih kosong.
+- `for ((i=1;i<=akhir;i++))` berfungsi untuk looping ketika i=1 kemudian i kurang dari sama dengan akhir maka i di increment.
+- ***loc***="`cat wget.log | grep "Location:" | head -$i | tail -1 | cut -d " " -f 2`" pertama kita membuat variabel ***loc***. Kemudian `grep "Location:"` berfungsi untuk mengambil data ***Location:***. `head -$i` berfungsi untuk menampilkan file pada urutan atas sejumlah nilai ***i***. `cut -d " " -f 2` berfungsi untuk menghapus karakter spasi dan hanya mengambil data yang ada di field ke 2.
+- ***Duplikasi***=`echo -e $arr | awk -v loc=$loc 'BEGIN {Duplikasi=0} {if (loc==$0) Duplikasi=1} END {printf "%d", Duplikasi}'` pertama kita membuat variabel bernama Duplikasi. `echo -e $arr` kemudian ***print*** nilai dari variabel ***arr***. `awk -v loc=$loc` kemudian jalankan awk dengan fungsi nilai dari variabel ***loc***. `BEGIN {Duplikasi=0} {if (loc==$0) Duplikasi=1}` berfungsi untuk mencari gambar yang identik dengan membandingkan lokasinya, jika ada yang identik maka variabel Duplikasi akan bernilai 1. `END {printf "%d", Duplikasi` dan diakhir akan di-***print*** nilai lokasi dari variabel Duplikasi tersebut. 
+- `[[ $Duplikasi == 1 ]]` jika nilai Duplikasi sama dengan 1 atau dengan kata lain ada gambar yang identik `mv pdkt_kusuma_$i ./duplikasi/duplikasi_$i` berfungsi untuk memindahkan file dengan pola ***"pdkt_kusuma_$i*** ke folder duplikasi dan mengubah namanya menjadi berpola ***duplikasi_$1***.
+- `arr="$arr$loc\n"` menjelaskan bahwa dalam variabel ***arr*** berisi data dari arr dan loc. `mv pdkt_kusuma_$i ./kenangan/kenangan_$i` berfungsi untuk memindahkan file dengan pola ***"pdkt_kusuma_$i*** ke folder kenangan dan mengubah namanya menjadi ***kenangan_$1***.
 
 ## Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 3C.
 
