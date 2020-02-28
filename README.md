@@ -211,10 +211,10 @@ grep "Location" wget.log >> location.log
 
 ```
 - ***banyakfile***=`ls | grep "pdkt_kusuma" | cut -d '_' -f 3 | sort -n | tail -1` Kita buat variabel bernama ***banyakfile*** kemudian `grep "pdkt_kusuma`berfungsi untuk mengambil file dengan pattern yang telah ditentukan. `cut -d '_' -f 3` berfungsi untuk menghapus karakter garis bawah sehingga variabel tersebut hanya dipisahkan dengan spasi dan terbagi menjadi tiga field, dan akhirnya yang dimasukan ke field ketiga adalah field ke 3. `sort -n` untuk mengurutkan berdasarkan urutan numerik. `tail -1` mengambil 1 output yang paling bawah.
-- `[[ $banyakfile =~ [^0-9] ]]` berfungsi untuk mengecek apakah ***$banyakfile*** terdiri dari angka 0-9.
+- `[[ $banyakfile =~ [^0-9] ]]` berfungsi untuk mengecek apakah ***banyakfile*** terdiri dari angka 0-9.
 - `banyakfile=0` Jika tidak ada angka 0-9 maka ***banyakfile*** dimulai dari 0.
 - ***awal***=`expr $banyakfile + 1` Buat variabel baru bernama ***awal***. `expr $banyakfile + 1` ***expr*** adalah syntax agar dapat melakukan operasi aritmatika dimana variabel awal merupakan ***banyakvariabel*** ditambah dengan 1.
-- ***akhir=***`expr $banyakfile + 28` Buat variabel baru bernama ***akhir***. `expr $banyakfile + 28` ***expr*** adalah syntax agar dapat melakukan operasi aritmatika dimana variabel akhhir merupakan ***&banyakvariabel*** ditambah dengan 28.
+- ***akhir=***`expr $banyakfile + 28` Buat variabel baru bernama ***akhir***. `expr $banyakfile + 28` ***expr*** adalah syntax agar dapat melakukan operasi aritmatika dimana variabel akhhir merupakan ***banyakvariabel*** ditambah dengan 28.
 - `for ((i=awal;i<=akhir;i++))` Untuk looping  ketika i=awal kemudian i kurang dari sama dengan akhir maka i di increment.
 - `wget -O "pdkt_kusuma_$i" -a wget.log "https://loremflickr.com/320/240/cat"` berfungsi untuk mengunduh gambar dari tautan yang diberikan. `wget -O "pdkt_kusuma_$i"` berfungsi untuk memberi pola nama pada file yang diunduh.
 - `grep "Location" wget.log >> location.log` mengambil data "Location" yang ada dalam wget.log kemudian dipindahkan ke location.log.
