@@ -215,7 +215,7 @@ grep "Location" wget.log >> location.log
 - `banyakfile=0` Jika tidak ada angka 0-9 maka ***banyakfile*** dimulai dari 0
 - ***awal***=`expr $banyakfile + 1` Buat variabel baru bernama ***awal***. `expr $banyakfile + 1` expr untuk syntax aritmatika dan ***&banyakvariabel*** ditambah dengan 1.
 - ***akhir=***`expr $banyakfile + 28` Buat variabel baru bernama ***akhir***. `expr $banyakfile + 28` expr untuk syntax aritmatika dan ***&banyakvariabel*** ditambah dengan 28.
-- `for ((i=awal;i<=akhir;i++))` Untuk looping  ketika i-awal kemudian i kurang dari sama dengan akhir maka i di increment.
+- `for ((i=awal;i<=akhir;i++))` Untuk looping  ketika i=awal kemudian i kurang dari sama dengan akhir maka i di increment.
 - `wget -O "pdkt_kusuma_$i" -a wget.log "https://loremflickr.com/320/240/cat"`
 - `grep "Location" wget.log >> location.log` mengambil "Location" dari wget.log kemudian dipindahkan ke location.log
 
@@ -268,11 +268,11 @@ if [[ $Duplikasi == 1 ]]
 done
 
 ```
-- ***akhir***=`ls | grep "pdkt_kusuma" | cut -d "_" -f 3 | sort -n | tail -1`
-- `[[ `ls | grep "kenangan"` != "kenangan" ]]` sad `mkdir ./kenangan`
-- `[[ `ls | grep "duplikasi"` != "duplikasi" ]]` sss `mkdir ./duplikasi`
-- `arr=""`
-- `for ((i=1;i<=akhir;i++))`
+- ***akhir***=`ls | grep "pdkt_kusuma" | cut -d "_" -f 3 | sort -n | tail -1` Kita buat variabel bernama ***akhir*** kemudian `grep "pdkt_kusuma` untuk membuat pattern dengan pattern yang sudah kita tentukan. `cut -d '_' -f 3`. `sort -n` untuk mengurutkan dari yang paling atas terkecil ke yang paling bawah terbesar. `tail -1` mengambil 1 output terakhir.
+- `[[ `ls | grep "kenangan"` != "kenangan" ]]` sad `mkdir ./kenangan` List kemudian mengecek dengan mengambil "kenangan", `mkdir ./kenangan` jika tidak ada maka membuat folder kenangan.
+- `[[ `ls | grep "duplikasi"` != "duplikasi" ]]` sss `mkdir ./duplikasi` List kemudian mengecek dengan mengambil "duplikasi", `mkdir ./duplikasi` jika tidak ada maka membuat folder duplikasi.
+- `arr=""` Buat array yang isinya masih kosong.
+- `for ((i=1;i<=akhir;i++))` Untuk looping  ketika i=1 kemudian i kurang dari sama dengan akhir maka i di increment.
 - ***loc***="`cat wget.log | grep "Location:" | head -$i | tail -1 | cut -d " " -f 2`"
 - ***Duplikasi***=`echo -e $arr | awk -v loc=$loc 'BEGIN {Duplikasi=0} {if (loc==$0) Duplikasi=1} END {printf "%d", Duplikasi}'`
 - `[[ $Duplikasi == 1 ]]` dqwqw `mv pdkt_kusuma_$i ./duplikasi/duplikasi_$i`
