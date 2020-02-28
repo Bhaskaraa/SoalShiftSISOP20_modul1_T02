@@ -229,10 +229,10 @@ Untuk menyelesaikan persoalan nomor 3b, syntax yang digunakan adalah sebagai ber
 5 6,14,22 * * 0-5 /bin/bash /home/bhaskarajd/Soal3/Soal3.sh
 
 ```
-- ***5***
-- ***6,14,22***
-- ***0-5***
-- `/bin/bash /home/bhaskarajd/Soal3/Soal3.sh`
+- ***5*** Karena yang diminta soal adalah jam 06.05 maka di bintang pertama adalah menit ke-5.
+- ***6,14,22*** Karena yang diminta soal adalah jam 6 dan setiap 8 jam, maka kelipatan 8 setelah jam 6 adalah jam 6,14,22.
+- ***0-5*** Karena yang diminta soal adalah setiap hari kecuali hari sabtu, maka 0-5 karena di crontab 0 adalah hari minggu.
+- `/bin/bash /home/bhaskarajd/Soal3/Soal3.sh` Lokasi file yang akan dieksekusi.
 
 ## 3C - Mengidentifikasi Gambar yang Identik dan Memisahkannya
 Untuk menyelesaikan persoalan nomer 3c, syntax yang digunakan adalah sebagai berikut.
