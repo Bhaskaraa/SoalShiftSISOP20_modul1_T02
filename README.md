@@ -36,7 +36,7 @@ echo "1 C - 10 Produk dengan profit paling kecil"
 awk -F \\t 'FNR>1{if($11=="Texas" || $11=="Illinois")array[$17]+=$21}END{for(region in array)print array[region], region}' Sample-Superstore.tsv | sort -g | head -n 10
 
 ```
-## 1A
+## 1A - Menampilkan Region dengan Profit Paling Sedikit
 ```
 echo "1 A - Region dengan profit paling kecil"
 awk -F \\t 'FNR>1{array[$13]+=$21}END{for(region in array)print array[region], region}' Sample-Superstore.tsv | sort -g | awk -F " " '{print $2}' | head -n 1
@@ -51,7 +51,7 @@ awk -F \\t 'FNR>1{array[$13]+=$21}END{for(region in array)print array[region], r
 - `awk -F " " '{print $2}'` berfungsi untuk memberi pemisah antara field berupa " " (spasi) dan yang di-***print*** hanya field kedua. 
 - Dan terakhir `head -n 1` berfungsi untuk menampilkan output baris 1 saja (paling atas).
 
-## 1B
+## 1B - Menampilkan 2 State dengan Profit Paling Sedikit
 ```
 echo "1 B - 2 Negara bagian dengan profit paling kecil" 
 awk -F \\t 'FNR>1{if($13=="Central")array[$11]+=$21}END{for(region in array)print array[region], region}' Sample-Superstore.tsv | sort -g | awk -F " " '{print $2}' | head -n 2
@@ -65,7 +65,7 @@ awk -F \\t 'FNR>1{if($13=="Central")array[$11]+=$21}END{for(region in array)prin
 - `awk -F " " '{print $2}'` berfungsi untuk memberi pemisah spasi diantara field output dan yang di-***print*** field ke 2 saja. 
 - `head -n 2` berfungsi untuk menampilkan 2 output teratas. sesuai dengan permintaan soal.
 
-## 1C
+## 1C - Menampilkan 10 Product Name dengan Profit Paling Sedikit
 ```
 echo "1 C - 10 Produk dengan profit paling kecil"
 awk -F \\t 'FNR>1{if($11=="Texas" || $11=="Illinois")array[$17]+=$21}END{for(region in array)print array[region], region}' Sample-Superstore.tsv | sort -g | head -n 10
@@ -94,7 +94,7 @@ Untuk itu, Whits meminta bantuan kalian untuk menyelesaikan persoalan-persoalan 
 
 File untuk penyelesaian soal ini ada disini : [Source Code Soal 2](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02/tree/master/Soal2)
 
-## 2A dan 2B
+## 2A dan 2B - Membuat Password Random dan Memberi Nama/Judul pada File
 Untuk menyelesaikan persoalan nomor 2A, syntax yang digunakan adalah sebagai berikut. 
 ```
 #!/bin/bash
@@ -106,7 +106,7 @@ read name
 judul=`echo "$name" | tr -dc A-Za-z`
 echo "$ngasal" >> $judul.txt
 ```
-## 2C
+## 2C - Mengenkripsi Judul File
 Untuk menyelesaikan persoalan nomor 2C, syntax yang digunakan adalah sebagai berikut. 
 ```
 #!/bin/bash
@@ -121,7 +121,7 @@ for namafile in $@
  done
  ```
   
-  ## 2D
+  ## 2D - Mendekripsi Judul File yang Dienkripsi
   Untuk menyelesaikan persoalan nomor 2D, syntax yang digunakan adalah sebagai berikut. 
   ```
   #!/bin/bash
@@ -140,7 +140,7 @@ done
 
 ![](Screenshot/Soal2/1.png)
 
-# Soal 3
+# Soal 3 - Mengunduh Gambar dan Melakukan Pemisahan gambar yang Identik
 Kusuma telah sering dicampakkan oleh pujaan hatinya sehingga kalian berniat untuk menghiburnya dengan mengirimkan foto kucing kepadanya. Kemudian kalian memiliki ide sebagai berikut :
 
 ***a.*** Mengunduh 28 gambar dari "https://loremflickr.com/320/240/cat" dengan command ***wget*** dengan format nama file "pdkt_kusuma_NO" dan menyimpan ***log messages wget*** kedalam file ***wget.log***. \
@@ -152,7 +152,7 @@ Untuk itu kalian diminta untuk membantu menenangkan hati Kusuma :)
 
 File untuk penyelesaian soal ini ada disini : [Source Code Soal 3](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02/tree/master/Soal3)
 
-## 3A
+## 3A - Mengunduh 28 Gambar dari Link yang Diberikan
 Untuk menyelesaikan persoalan nomor 3a, syntax yang digunakan adalah sebagai berikut.
 ```
 #!/bin/bash/
@@ -178,14 +178,14 @@ grep "Location" wget.log >> location.log
 
 ![](Screenshot/Soal3/1.png)
 
-## 3B
+## 3B - Menjalankan Crontab untuk Menjalankan Program Secara Otomatis
 Untuk menyelesaikan persoalan nomor 3b, syntax yang digunakan adalah sebagai berikut.
 ```
 5 6,14,22 * * 0-5 /bin/bash /home/bhaskarajd/Soal3/Soal3.sh
 
 ```
 
-## 3C
+## 3C - Mengidentifikasi Gambar yang Identik dan Memisahkannya
 Untuk menyelesaikan persoalan nomer 3c, syntax yang digunakan adalah sebagai berikut.
 ```
 #!/bin/bash
