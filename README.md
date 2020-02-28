@@ -19,9 +19,10 @@ Disusun oleh :
 
 ## [Soal 3](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#soal-3---mengunduh-gambar-dan-melakukan-pemisahan-gambar-yang-identik)
 - [Penyelesaian Soal 3A](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#3a---mengunduh-28-gambar-dari-link-yang-diberikan)
+- [Dokumentasi Output yang Dihasilkan 3A](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02/blob/master/README.md#gambar-dibawah-ini-adalah-hasil-dari-script-penyelesaian-soal-nomor-3a)
 - [Penyelesaian Soal 3B](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#3b---menjalankan-crontab-untuk-menjalankan-program-secara-otomatis)
 - [Penyelesaian Soal 3C](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#3c---mengidentifikasi-gambar-yang-identik-dan-memisahkannya)
-- [Dokumentasi Output yang Dihasilkan](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#gambar-dibawah-ini-adalah-hasil-dari-script-penyelesaian-soal-nomor-3c)
+- [Dokumentasi Output yang Dihasilkan 3C](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#gambar-dibawah-ini-adalah-hasil-dari-script-penyelesaian-soal-nomor-3c)
 
 
 
@@ -120,6 +121,15 @@ read name
 judul=`echo "$name" | tr -dc A-Za-z`
 echo "$ngasal" >> $judul.txt
 ```
+- ***ngasal=***`< /dev/urandom  tr -dc A-Za-z0-9 | fold -w 28 | head -n 1` Pertama kita membuat variabel ***ngasal*** dimana didalam variabel terdapat password random yang telah dibuat. 
+- `< /dev/urandom  tr -dc A-Za-z0-9` berfungsi untuk membuat password secara random. `tr -dc A-Za-z0-9` berfungsi menghapus semua karakter di luar karakter yang dideklarasi.
+- `fold -w 28` berfungsi untuk mambatasi panjang karakter yang dibuat, dimana `-w` membatasi lebarnya yakni 28 karakter.
+- `head -n 1` untuk menampilkan satu baris teratas saja.
+- `echo "Tulis Judul Filenya :"` sebagai perintah untuk memasukan judul file.
+- `read name` berfungsi untuk membaca judul yang telah dibuat.
+- ***judul***=`echo "$name" | tr -dc A-Za-z` membuat variabel judul. Kemudian ***print*** judul yang telah dimasukkan sebelumnya dan `tr -dc A-Za-z` untuk menghapus karakter di luar variabel yang ditentukan (hanya boleh alphabet).
+- `echo "$ngasal" >> $judul.txt` berfungsi untuk memasukan password random yang telah dibuat ke dalam file.
+
 ## 2C - Mengenkripsi Judul File
 Untuk menyelesaikan persoalan nomor 2C, syntax yang digunakan adalah sebagai berikut. 
 ```
@@ -134,6 +144,11 @@ for namafile in $@
    mv $namafile $namafilebaru.txt
  done
  ```
+ - `for namafile in $@` untuk membaca semua variabel ***namafile*** dan `$@` memasukan semua input yang ada.
+ - ***waktu***=`date +%H -r $namafile` membuat variabel waktu, lalu membaca waktu (jam) dibuatnya file tersebut dan menyimpannya di variabel waktu.
+ - ***namafilelama***=`basename $namafile .txt` membuat variabel namafilelama, kemudian `basename $namafile .txt` untuk memisahkan nama file dengan ekstensi file .txt.
+ - ***namafilebaru***=`echo $namafilelama | caesar $waktu` membuat variabel namafilebaru. Kemudian data yang disimpan di variabel ***namafilelama*** dienkripsi menggunakan teknik ceaser dengan pergeseran berdasarkan data yang ada dalam variabel ***waktu***.
+ - `mv $namafile $namafilebaru.txt` untuk mengganti data yang ada dalam variabel ***namafile*** dengan data yang ada dalam variabel ***namafilebaru*** (hasil enkripsi) dengan ekstensi file .txt seperti sebelumnya.
   
   ## 2D - Mendekripsi Judul File yang Dienkripsi
   Untuk menyelesaikan persoalan nomor 2D, syntax yang digunakan adalah sebagai berikut. 
@@ -149,6 +164,12 @@ for judul in $@
    mv $judul $judulbaru.txt
 done
 ```
+- `for judul in $@` untuk membaca semua variabel ***judul*** dan `$@` memasukan semua input yang ada.
+- ***waktu***=`date +%H -r $judul` membuat variabel waktu, lalu membaca waktu (jam) dibuatnya file tersebut dan menyimpannya di variabel waktu.
+- ***judullama***=`basename $judul .txt` membuat variabel judullama, kemudian `basename $judul .txt` untuk memisahkan nama file dengan ekstensi file .txt.
+- ***waktubaru***=`expr 26 - $waktu` membuat variabel waktubaru. Kemudian `expr 26 - $waktu` berfungsi untuk blablabla
+- ***judulbaru***=`echo $judullama | caesar $waktubaru` membuat variabel ***judulbaru***. Kemudian data yang disimpan di variabel ***judullama*** didekripsi menggunakan teknik ceaser dengan pergeseran berdasarkan data yang ada dalam variabel ***waktubaru***.
+- `mv $judul $judulbaru.txt` untuk mengganti data yang ada dalam variabel ***judul*** dengan data yang ada dalam variabel ***judulbaru*** (hasil dekripsi) dengan ekstensi file .txt seperti sebelumnya.
 
 ## Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 2.
 
