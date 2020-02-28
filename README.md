@@ -2,6 +2,13 @@
 Repository Sebagai Laporan Resmi Soal Shift Modul 1 Praktikum Sistem Operasi 2020\
 Disusun oleh : I Gde Made Bhaskara Jala Dhananjaya (05311840000007) & Azmi (05311840000047)
 
+# Daftar Isi
+## [Soal 1](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#soal-1---awk-untuk-menyaring-data)
+- [Penyelesaian Soal 1A] (https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#1a)
+- [Penyelesaian Soal 1B] ()
+- [Penyelesaian Soal 1C] ()
+- [Dokumentasi Output yang Dihasilkan] ()
+
 # Soal 1 - AWK untuk Menyaring Data
 Whits adalah seorang mahasiswa teknik informatika. Dia mendapatkan tugas praktikum untuk membuat laporan berdasarkan data yang ada pada file “Sample-Superstore.tsv”. Namun dia tidak dapat menyelesaikan tugas tersebut. Laporan yang diminta berupa : 
 
