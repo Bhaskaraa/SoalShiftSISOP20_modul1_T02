@@ -51,6 +51,10 @@ awk -F \\t 'FNR>1{if($11=="Texas" || $11=="Illinois")array[$17]+=$21}END{for(reg
 
 Soal nomor 1c ditandai dengan `echo "1 C - 10 Produk dengan profit paling kecil"`. Sama seperti persoalan sebelumnya, `awk -F \\t` digunakan untuk blablabla. Kemudian, `FNR>1{if($11=="Texas" || $11=="Illinois")array[$17]+=$21}END{for(region in array)print array[region], region}` artinya untuk untuk baris yang lebih dari baris pertama, jika field 11 ***(Region)*** merupakan ***Texas*** atau ***Illinois***, field 17 ***(product name)*** dari State yang dimaksud dimasukkan ke dalam array dan field 21 ***(profit)*** dijumlahkan. Output yang dihasilkan adalah data di field 17 ***(product name)*** beserta profitnya masing-masing. `sort -g` untuk mengurutkan data dari yang terkecil. Dan `head -n 10` untuk menampilkan 10 data teratas.
 
+## Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 1.
+
+![](Screenshot/Soal1/1.png)
+
 # Soal 2 - Membuat Password Random dan Mengenkripsi File dengan Ceaser
 Suatu siang, laptop Randolf dan Afairuzr dibajak oleh seseorang dan laptop mereka berisi data-data penting. Agar kejadian tersebut tidak terulang kembali, mereka meminta bantuan Whits dan tercetus ide sebagai berikut :
 
@@ -62,9 +66,6 @@ Suatu siang, laptop Randolf dan Afairuzr dibajak oleh seseorang dan laptop merek
 Untuk itu, Whits meminta bantuan kalian untuk menyelesaikan persoalan-persoalan diatas.
 
 File untuk penyelesaian soal ini ada disini : [Source Code Soal 2](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02/tree/master/Soal2)
-
-Gambar dibawah ini adalah hasil dari script penyelesaian soal nomor 1.
-![](Screenshot/Soal1/Screenshot from 2020-02-21 15-48-33.png)
 
 ## 2A dan 2B
 Untuk menyelesaikan persoalan nomor 2A, syntax yang digunakan adalah sebagai berikut. 
