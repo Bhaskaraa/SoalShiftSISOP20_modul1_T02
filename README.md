@@ -24,7 +24,7 @@ Disusun oleh :
 - [Penyelesaian Soal 3C](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#3c---mengidentifikasi-gambar-yang-identik-dan-memisahkannya)
 - [Dokumentasi Output yang Dihasilkan 3C](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#gambar-dibawah-ini-adalah-hasil-dari-script-penyelesaian-soal-nomor-3c)
 
-## Kendala yang Dialami
+## [Kendala yang Dialami](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#kendala-yang-dialami-1)
 
 
 
