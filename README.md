@@ -287,8 +287,8 @@ done
 ![](Screenshot/Soal3/4.png)
 
 ## Kendala yang Dialami
-***1.*** Penulis masih menyesuaikan diri dengan sistem operasi LINUX/Ubuntu sehingga ada beberapa kendala dalam menggunakan terminal.
-***2.*** Beberapa soal menuntut oenulis untuk mencari sumber dari luar seperti buku maupun internet, dan karena sumber berbeda-beda penulis terkadang kebingungan dalam menggunakan sintaks yang ada.
-***3.*** Banyak command baru yang penulis belum pernah dengar maupun gunakan sebelumnya.
-***4.*** Untuk Soal nomor 3C, saat gambar dihapus salah satu terlihat eror di terminal, namun sebenarnya program masih tetap berjalan.
-***5.*** Banyak tugas lain yang menganggu baik akademik maupun non-akademik sehingga penyelesaian soal baru dapat dipublish mendekati waktu deadline.
+***1.*** Penulis masih menyesuaikan diri dengan sistem operasi LINUX/Ubuntu sehingga ada beberapa kendala dalam menggunakan terminal. \
+***2.*** Beberapa soal menuntut oenulis untuk mencari sumber dari luar seperti buku maupun internet, dan karena sumber berbeda-beda penulis terkadang kebingungan dalam menggunakan sintaks yang ada. \
+***3.*** Banyak command baru yang penulis belum pernah dengar maupun gunakan sebelumnya. \
+***4.*** Untuk Soal nomor 3C, saat gambar dihapus salah satu terlihat eror di terminal, namun sebenarnya program masih tetap berjalan. \
+***5.*** Banyak tugas lain yang menganggu baik akademik maupun non-akademik sehingga penyelesaian soal baru dapat dipublish mendekati waktu deadline. 
