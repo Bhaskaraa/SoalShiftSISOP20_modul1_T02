@@ -24,6 +24,8 @@ Disusun oleh :
 - [Penyelesaian Soal 3C](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#3c---mengidentifikasi-gambar-yang-identik-dan-memisahkannya)
 - [Dokumentasi Output yang Dihasilkan 3C](https://github.com/Bhaskaraa/SoalShiftSISOP20_modul1_T02#gambar-dibawah-ini-adalah-hasil-dari-script-penyelesaian-soal-nomor-3c)
 
+## Kendala yang Dialami
+
 
 
 # Soal 1 - AWK untuk Menyaring Data
@@ -283,3 +285,10 @@ done
 ![](Screenshot/Soal3/2.png)
 ![](Screenshot/Soal3/3.png)
 ![](Screenshot/Soal3/4.png)
+
+## Kendala yang Dialami
+***1.*** Penulis masih menyesuaikan diri dengan sistem operasi LINUX/Ubuntu sehingga ada beberapa kendala dalam menggunakan terminal.
+***2.*** Beberapa soal menuntut oenulis untuk mencari sumber dari luar seperti buku maupun internet, dan karena sumber berbeda-beda penulis terkadang kebingungan dalam menggunakan sintaks yang ada.
+***3.*** Banyak command baru yang penulis belum pernah dengar maupun gunakan sebelumnya.
+***4.*** Untuk Soal nomor 3C, saat gambar dihapus salah satu terlihat eror di terminal, namun sebenarnya program masih tetap berjalan.
+***5.*** Banyak tugas lain yang menganggu baik akademik maupun non-akademik sehingga penyelesaian soal baru dapat dipublish mendekati waktu deadline.
